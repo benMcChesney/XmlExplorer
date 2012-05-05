@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		D94872D61554F2060004E1FA /* ofxTextBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94872D11554F2060004E1FA /* ofxTextBlock.cpp */; };
 		D97D1BD5155386FA00967C12 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D97D1BCE155386FA00967C12 /* tinyxml.cpp */; };
 		D97D1BD6155386FA00967C12 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D97D1BD0155386FA00967C12 /* tinyxmlerror.cpp */; };
 		D97D1BD7155386FA00967C12 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D97D1BD1155386FA00967C12 /* tinyxmlparser.cpp */; };
@@ -63,6 +64,10 @@
 
 /* Begin PBXFileReference section */
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		D94872CF1554F2060004E1FA /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		D94872D11554F2060004E1FA /* ofxTextBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTextBlock.cpp; sourceTree = "<group>"; };
+		D94872D21554F2060004E1FA /* ofxTextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTextBlock.h; sourceTree = "<group>"; };
+		D94872D31554F2060004E1FA /* ofxTextSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTextSuite.h; sourceTree = "<group>"; };
 		D97D1BCC155386FA00967C12 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		D97D1BCE155386FA00967C12 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		D97D1BCF155386FA00967C12 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
@@ -122,6 +127,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				D94872CA1554F2060004E1FA /* ofxTextSuite */,
 				D97D1BCB155386FA00967C12 /* ofxXmlSettings */,
 			);
 			name = addons;
@@ -152,6 +158,26 @@
 				BBAB23BE13894E4700AA2426 /* GLUT.framework */,
 			);
 			name = "3rd party frameworks";
+			sourceTree = "<group>";
+		};
+		D94872CA1554F2060004E1FA /* ofxTextSuite */ = {
+			isa = PBXGroup;
+			children = (
+				D94872CF1554F2060004E1FA /* install.xml */,
+				D94872D01554F2060004E1FA /* src */,
+			);
+			name = ofxTextSuite;
+			path = ../../../addons/ofxTextSuite;
+			sourceTree = "<group>";
+		};
+		D94872D01554F2060004E1FA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D94872D11554F2060004E1FA /* ofxTextBlock.cpp */,
+				D94872D21554F2060004E1FA /* ofxTextBlock.h */,
+				D94872D31554F2060004E1FA /* ofxTextSuite.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		D97D1BCB155386FA00967C12 /* ofxXmlSettings */ = {
@@ -327,6 +353,7 @@
 				D97D1BD7155386FA00967C12 /* tinyxmlparser.cpp in Sources */,
 				D97D1BD8155386FA00967C12 /* ofxXmlSettings.cpp in Sources */,
 				D97D1BDC1553879E00967C12 /* VisualNode.cpp in Sources */,
+				D94872D61554F2060004E1FA /* ofxTextBlock.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +504,9 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxPango/src/libs/mac/static\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -563,7 +592,9 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_49)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../addons/ofxPango/src/libs/mac/static\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

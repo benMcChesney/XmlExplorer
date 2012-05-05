@@ -11,54 +11,49 @@
 
 #include "ofMain.h"
 
-enum xmlType
-{
-    STRING = 0 , 
-    FLOAT = 1 , 
-    DOUBLE = 2 , 
-    INT = 3
-};
+#include "ofxTextSuite.h"
 
+/* Goal is to store tagname, tagIndex , and path with children ? */
 class VisualNode
 {
     public :
-        VisualNode ( ) 
-        {
-            _type = STRING ; 
-        } 
+        VisualNode ( ) { } 
     
         void setup ( ) ; 
         void update( ) ;
         void draw( ) ;
         void drawSelected( ) ;
     
-        void setToString( string s ) 
-        {
-            _type = STRING ;
-            s_value = s ;
-        }
-        
-        void setToInt( int i ) 
-        {
-            _type = INT ;
-            i_value = i ;
-        }
+        void setPath ( string _path ) ; 
+        string getPath( ) {return path ; }  
     
-        void setToFloat( float f ) 
-        {
-            _type = FLOAT ; 
-            f_value = f ; 
-        }
+        void setTag( string _tagName , int _tagIndex ) ;
     
-        ofRectangle bounds ; 
-        string name ; 
-        
-        int i_value ;
-        float f_value ;
-        string s_value ; 
-        
-        xmlType _type ; 
+        ofRectangle getBounds ( ) { return bounds ; } 
+        void setBounds ( ofRectangle _bounds ) { bounds = _bounds ; }
+        void setDefaultFontStyle( ) ; 
     
-        
+        ofColor fillColor_off ;
+        ofColor textColor_off ;
+        ofColor fillColor_on ;
+        ofColor textColor_on ;
+    
+        string getTagName() { return tagName ; }
+        int getTagIndex() { return tagIndex ; }
+    
+        //cannot change values
+        bool bLocked ; 
+    
+    
+    
+    private :
+        string path; 
+        string tagString ;
+        string tagName ; 
+        int tagIndex ; 
+    
+        ofRectangle bounds ;
+        ofxTextBlock tagBlock ;
+        ofxTextBlock pathBlock ;
 };
 #endif

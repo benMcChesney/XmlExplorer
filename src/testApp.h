@@ -4,6 +4,8 @@
 #include "ofxXmlSettings.h"
 #include "VisualNode.h"
 
+#include "ofxTextSuite.h"
+
 class testApp : public ofBaseApp{
 
 	public:
@@ -26,5 +28,4 @@ class testApp : public ofBaseApp{
     
         bool hitTest( float x , float y , ofRectangle r ) ; 
         VisualNode * currentNode ; 
-		
 };
